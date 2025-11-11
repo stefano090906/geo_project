@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
-import 'package:geocoding/geocoding.dart'; // untuk menampilkan alamat
+import 'package:geocoding/geocoding.dart'; 
 
 void main() {
   runApp(MyApp());
@@ -34,7 +34,7 @@ class _MyHomePageState extends State<MyHomePage> {
   //[Langkah 1] Buat variabel untuk menyimpan jarak ke PNB
   String? _distanceToPNB;
 
-  //Koordinat tetap (contoh: Politeknik Negeri Bali)
+  //Koordinat tetap 
   final double _pnbLatitude = -8.7995;
   final double _pnbLongitude = 115.1767;
 
@@ -121,7 +121,6 @@ class _MyHomePageState extends State<MyHomePage> {
       _positionStream = Geolocator.getPositionStream(
         locationSettings: locationSettings,
       ).listen((Position position) async {
-        //Inilah bagian kode yang kamu kirim (LETTAKNYA DI SINI)
         double distanceInMeters = Geolocator.distanceBetween(
           _pnbLatitude,
           _pnbLongitude,
@@ -134,9 +133,6 @@ class _MyHomePageState extends State<MyHomePage> {
           _distanceToPNB = "Jarak dari PNB: ${distanceInMeters.toStringAsFixed(2)} m";
           _errorMessage = null;
         });
-
-        //Akhir potongan kode dari kamu
-
         await _getAddressFromLatLng(position);
       });
     } catch (e) {

@@ -20,3 +20,15 @@ untuk tampilan awalnya (sebelum mengerjakan tugas) adalah pada gambar berikut :
 dan untuk tampilan sesudah mengerjakan tugas adalah pada gambar berikut :
 ![alt text](<Gambar WhatsApp 2025-11-10 pukul 15.35.14_25d4fb27.jpg>)
 
+**Tugas 2**: Jarak Real-time ke Titik Tetap
+Manfaatkan fungsi Geolocator.distanceBetween dari Langkah 4.
+1. Buat variabel String? distanceToPNB; di MyHomePageState.
+2. Di dalam startTracking (di dalam .listen()), panggil fungsi untuk menghitung
+jarak:
+3. Simpan hasilnya di distanceToPNB menggunakan setState.
+4. Tampilkan distanceToPNB di UI agar jaraknya ter-update secara real-time saat
+Anda bergerak
+
+untuk tampilan tugas ke 2 yaitu pada gambar berikut :
+![alt text](<Gambar WhatsApp 2025-11-11 pukul 14.31.23_b9a9e35d.jpg>)
+

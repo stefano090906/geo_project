@@ -154,7 +154,7 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-  // 🔹 [Langkah 4] Tampilkan jarak di UI agar ter-update real-time
+  //[Langkah 4] Tampilkan jarak di UI agar ter-update real-time
  
   @override
   Widget build(BuildContext context) {
@@ -194,7 +194,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
               ],
 
-              // 🔹 [Langkah 4] Tampilkan jarak real-time
+              //[Langkah 4] Tampilkan jarak real-time
               if (_distanceToPNB != null)
                 Padding(
                   padding: const EdgeInsets.only(top: 16.0),

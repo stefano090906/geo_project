@@ -31,10 +31,10 @@ class _MyHomePageState extends State<MyHomePage> {
 
   StreamSubscription<Position>? _positionStream;
 
-  // 🔹 [Langkah 1] Buat variabel untuk menyimpan jarak ke PNB
+  //[Langkah 1] Buat variabel untuk menyimpan jarak ke PNB
   String? _distanceToPNB;
 
-  // 🔹 Koordinat tetap (contoh: Politeknik Negeri Bali)
+  //Koordinat tetap (contoh: Politeknik Negeri Bali)
   final double _pnbLatitude = -8.7995;
   final double _pnbLongitude = 115.1767;
 
@@ -44,7 +44,7 @@ class _MyHomePageState extends State<MyHomePage> {
     super.dispose();
   }
 
-  // 🔹 Fungsi untuk meminta izin dan mengambil lokasi
+  //Fungsi untuk meminta izin dan mengambil lokasi
   Future<Position> _getPermissionAndLocation() async {
     bool serviceEnabled;
     LocationPermission permission;
@@ -71,7 +71,7 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
-  // 🔹 Mendapatkan alamat dari koordinat
+  //Mendapatkan alamat dari koordinat
   Future<void> _getAddressFromLatLng(Position position) async {
     try {
       List<Placemark> placemarks = await placemarkFromCoordinates(
@@ -91,7 +91,7 @@ class _MyHomePageState extends State<MyHomePage> {
     }
   }
 
-  // 🔹 Tombol untuk mendapatkan lokasi sekarang
+  //Tombol untuk mendapatkan lokasi sekarang
   void _handleGetLocation() async {
     try {
       Position position = await _getPermissionAndLocation();
@@ -107,9 +107,8 @@ class _MyHomePageState extends State<MyHomePage> {
     }
   }
 
-  // ============================================================
-  // 🔹 [Langkah 2 & 3] Fungsi untuk mulai tracking real-time
-  // ============================================================
+  //[Langkah 2 & 3] Fungsi untuk mulai tracking real-time
+  
   void _handleStartTracking() {
     _positionStream?.cancel();
 
@@ -122,7 +121,7 @@ class _MyHomePageState extends State<MyHomePage> {
       _positionStream = Geolocator.getPositionStream(
         locationSettings: locationSettings,
       ).listen((Position position) async {
-        // 🔹 Inilah bagian kode yang kamu kirim (LETTAKNYA DI SINI)
+        //Inilah bagian kode yang kamu kirim (LETTAKNYA DI SINI)
         double distanceInMeters = Geolocator.distanceBetween(
           _pnbLatitude,
           _pnbLongitude,
@@ -135,7 +134,8 @@ class _MyHomePageState extends State<MyHomePage> {
           _distanceToPNB = "Jarak dari PNB: ${distanceInMeters.toStringAsFixed(2)} m";
           _errorMessage = null;
         });
-        // 🔹 Akhir potongan kode dari kamu
+
+        //Akhir potongan kode dari kamu
 
         await _getAddressFromLatLng(position);
       });
@@ -146,7 +146,7 @@ class _MyHomePageState extends State<MyHomePage> {
     }
   }
 
-  // 🔹 Tombol untuk berhenti melacak
+  //Tombol untuk berhenti melacak
   void _handleStopTracking() {
     _positionStream?.cancel();
     setState(() {
@@ -154,9 +154,8 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-  // ============================================================
   // 🔹 [Langkah 4] Tampilkan jarak di UI agar ter-update real-time
-  // ============================================================
+ 
   @override
   Widget build(BuildContext context) {
     return Scaffold(

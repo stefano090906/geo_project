@@ -30,5 +30,5 @@ jarak:
 Anda bergerak
 
 untuk tampilan tugas ke 2 yaitu pada gambar berikut :
-![alt text](<Gambar WhatsApp 2025-11-11 pukul 14.31.23_b9a9e35d.jpg>)
+![alt text](<Gambar WhatsApp 2025-11-11 pukul 15.00.20_6632b844.jpg>)
 

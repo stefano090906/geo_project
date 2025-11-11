@@ -155,7 +155,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Tugas 2 - Jarak Real-time ke PNB")),
+      appBar: AppBar(title: Text("Tugas 2 - Praktikum Geocolocator")),
       body: Padding(
         padding: const EdgeInsets.all(24.0),
         child: SingleChildScrollView(
